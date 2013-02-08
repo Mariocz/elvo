@@ -23,11 +23,8 @@ class AdminPresenter extends BasePresenter {
         return new LoginControl($this->user);
     }
 
-    public function handleLogout() {
-
-        $this->user->logout();
-
-        $this->redirect('Homepage:');
+    protected function createComponentArticleAdminer() {
+        return new ArticlesAdminerControl();
     }
 
 }
