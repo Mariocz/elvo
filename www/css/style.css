@@ -161,10 +161,11 @@ body {
 }
 
 #footer {
-    width: 100%;
+    width: 960px;
     height: 200px;
     background-color: white;
     color: gray;
+    clear: both;
     font-family: 'Titan One', cursive;
     text-align: right;
     background: #fcfff4; /* Old browsers */
