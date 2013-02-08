@@ -23,7 +23,7 @@ class AdminPresenter extends BasePresenter {
         return new LoginControl($this->user);
     }
 
-    public function actionLogout() {
+    public function handleLogout() {
 
         $this->user->logout();
 

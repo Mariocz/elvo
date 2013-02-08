@@ -91,6 +91,7 @@
 
             <div id="contentbox">
                 <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+                <span class="logout" n:if="$user->isLoggedIn()"><a n:href="admin:" class="admin-button">Admin</a><a n:href="admin:logout">Odhlásit se</a></span>
                 <div id="submenu" class="displayNone">
                     <div id="subline"> </div>
                 </div>			

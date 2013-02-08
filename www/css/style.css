@@ -20,9 +20,6 @@ body {
     margin: -8px auto;
     width: 960px;
     padding: 0px 5px 5px 5px;
-
-    -webkit-border-radius: 10px;
-    border-radius: 10px;    
 }
 
 #header {
@@ -103,6 +100,7 @@ body {
 #contentbox {	
     background-color: white;
     min-height: 350px;
+    padding-top: 4px;
     background: #ffffff; /* Old browsers */
     background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 81%, #ededed 87%, #ffffff 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(81%,#f3f3f3), color-stop(87%,#ededed), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
@@ -234,4 +232,32 @@ body {
     background-color: #FFA8A8;
     border: 2px solid #FF6969;
     padding: 3px 0px 3px 10px;
+}
+
+/*logout button*/
+
+.logout {
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 2px solid #FF6969;
+    color: #ff0000;
+    font-weight: bold;
+    padding: 5px 0px 5px 0px;
+    text-align: right;
+}
+
+.logout a {
+    color: #ff0000;    
+    position: relative;
+    left: -20px;
+}
+
+.logout a:visited {
+    color: #ff0000;
+}
+
+.logout a.admin-button {
+    color: #0000ff;
+    margin-right: 10px;
 }
