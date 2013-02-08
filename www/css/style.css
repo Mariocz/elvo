@@ -222,3 +222,17 @@ body {
 .displayNone {
     display: none;
 }
+
+/*flash messages*/
+
+.flash.info {
+    background-color: #A8FFA8;
+    border: 2px solid #42FF49;
+    padding: 3px 0px 3px 10px;
+}
+
+.flash.error {
+    background-color: #FFA8A8;
+    border: 2px solid #FF6969;
+    padding: 3px 0px 3px 10px;
+}

@@ -40,55 +40,57 @@
                 <div id="menu">
                     <ul>
                         <li>
-                            <a href="Aktuality.html" id="menu_main_0">
-                                <span>Aktuality</span>
+                            <a n:href="homepage:" n:class="$presenter->linkCurrent?active">
+                                Aktuality
                             </a>
                         </li>
                         <li>
-                            <a href="Topeni.html" id="menu_main_1">
-                                <span>Topení</span>
+                            
+                            <a n:href="topeni:" n:class="$presenter->linkCurrent?active">
+                                Topení
                             </a>
                         </li>
                         <li>
-                            <a href="Solarni-systemy.html" id="menu_main_2">
+                            <a n:href="solarniSystemy:" n:class="$presenter->linkCurrent?active">
                                 <span>Solární systémy</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Plyn.html" id="menu_main_3">
+                            <a n:href="plyn:" n:class="$presenter->linkCurrent?active">
                                 <span>Plyn</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Vodoinstalace.html" id="menu_main_4">
+                            <a n:href="vodoinstalace" n:class="$presenter->linkCurrent?active">
                                 <span>Vodoinstalace</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Servis.html" id="menu_main_5">
+                            <a n:href="servis:" n:class="$presenter->linkCurrent?active">
                                 <span>Servis</span>
                             </a>
                         </li>
-                        <li>
+<!--                        <li>
                             <a href="Osvedceni.html" id="menu_main_6">
                                 <span>Osvědčení</span>
                             </a>
-                        </li>
+                        </li>-->
                         <li>
-                            <a href="Fotogalerie.html" id="menu_main_7">
-                                <span>Fotogalerie</span>
+                            <a n:href="reference:" n:class="$presenter->linkCurrent?active">
+                                <span>Fotogalerie/reference</span>
                             </a>
                         </li>
-                        <li>
+<!--                        <li>
                             <a href="eShop.html" id="menu_main_8">
                                 <span>eShop</span>
                             </a>
-                        </li>
+                        </li>-->
                     </ul>		
                 </div>		
             </div>
 
             <div id="contentbox">
+                <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
                 <div id="submenu" class="displayNone">
                     <div id="subline"> </div>
                 </div>			
