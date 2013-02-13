@@ -5,32 +5,50 @@
 # http://nette.org/security-warning
 #
 common:
-	parameters:
+    parameters:
+    
+    php:
+            date.timezone: Europe/Prague
+            # zlib.output_compression: yes
 
-	php:
-		date.timezone: Europe/Prague
-		# zlib.output_compression: yes
-
-
-	nette:
-		application:
-			errorPresenter: Error
-
-		session:
-			expiration: 14 days
-
-		database:
-			default:
-				dsn: 'mysql:host=localhost;dbname=elvoDB'
-				user: root
-				password: pass
-
-	services:
-		database: @nette.database.default
-
-		authenticator: 
-			class: Security\Authenticator
+    nette:
+        application:
+            errorPresenter: Error
+        session:
+            expiration: 14 days
+    services:
+        database: @nette.database.default
+        authenticator: 
+            class: Security\Authenticator
 
 production < common:
+    parameters:
+        database:
+            driver: mysql
+            socket: /tmp/mysql51.sock
+            dbname: elvoDB
+            user: 1d1fhhzm
+            password: "ac%aksud9"
+        
 
+    nette:
+        database:
+            default:
+                dsn: '%database.driver%:unix_socket=%database.socket%;dbname=%database.dbname%'
+                user: %database.user%
+                password: %database.password%
 development < common:
+    parameters:
+        database:
+            driver: mysql
+            host: localhost
+            dbname: elvoDB
+            user: root
+            password: pass
+
+    nette:
+        database:
+            default:
+                dsn: '%database.driver%:%database.host%;dbname=%database.dbname%'
+                user: %database.user%
+                password: %database.password%
