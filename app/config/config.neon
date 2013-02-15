@@ -16,6 +16,9 @@ common:
             errorPresenter: Error
         session:
             expiration: 14 days
+        debugger:
+            email: 'milosdivis@gmail.com'
+
     services:
         database: @nette.database.default
         authenticator: 
@@ -37,6 +40,7 @@ production < common:
                 dsn: '%database.driver%:unix_socket=%database.socket%;dbname=%database.dbname%'
                 user: %database.user%
                 password: %database.password%
+
 development < common:
     parameters:
         database:
@@ -49,6 +53,6 @@ development < common:
     nette:
         database:
             default:
-                dsn: '%database.driver%:%database.host%;dbname=%database.dbname%'
+                dsn: '%database.driver%:host=%database.host%;dbname=%database.dbname%'
                 user: %database.user%
                 password: %database.password%
