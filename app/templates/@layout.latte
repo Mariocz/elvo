@@ -14,7 +14,7 @@
         <meta name="author" content="Miloš Diviš">
         <meta name="keywords" content="Vodoinstalace,Topení,Plyn,Zámečnické práce,Koupelny,Podlahové topení">
 
-        <title> {block #title}{/block} Elvo plyn, Miloš Diviš</title>
+        <title> {block #title|stripTags|trim}{/block} Elvo Plyn, Miloš Diviš</title>
 
         <link rel="stylesheet" href="{$basePath}/css/style.css" type="text/css">
         <link rel="stylesheet" href="{$basePath}/css/lightbox.css"  type="text/css">
@@ -26,7 +26,7 @@
         <script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
         <script type="text/javascript" src="{$basePath}/js/jquery.nette.js"></script>
         <script type="text/javascript" src="{$basePath}/js/lightbox.js"></script>
-
+        
         <meta name="robots" content="index,follow">
         <meta name="googlebot" content="index,follow,snippet,archive">
     </head>
@@ -91,12 +91,9 @@
 
             <div id="contentbox">
                 <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
-                <span class="logout" n:if="$user->isLoggedIn()"><a n:href="admin:" class="admin-button">Admin</a><a n:href="admin:logout">Odhlásit se</a></span>
-                <div id="submenu" class="displayNone">
-                    <div id="subline"> </div>
-                </div>			
+                <span class="logout" n:if="$user->isLoggedIn()"><a n:href="admin:" class="admin-button">Admin</a><a n:href="admin:logout">Odhlásit se</a></span>			
                 <div id="content">
-                    <div id="contact">
+                    <div id="contact" n:if="!$presenter->getName()=='Admin'">
                         <span class="text jmeno">Miloš Diviš</span>
                         <br><br>
                         <span class="text">

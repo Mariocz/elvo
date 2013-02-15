@@ -1,15 +1,10 @@
 <?php
 
 class AdminPresenter extends BasePresenter {
-
-    /** @var Nette\Database\Connection */
-    private $db;
+    
 
     protected function startup() {
         parent::startup();
-
-        // vytvoří instanci služby a uloží do vlastnosti presenteru
-        $this->db = $this->context->database;
     }
 
     public function renderDefault() {
@@ -19,12 +14,18 @@ class AdminPresenter extends BasePresenter {
     }
 
     protected function createComponentLogin() {
-
         return new LoginControl($this->user);
     }
 
-    protected function createComponentArticleAdminer() {
-        return new ArticlesAdminerControl();
+    protected function createComponentPageAdminer() {
+        return new PageAdminerControl($this->context->dao);
+    }
+    
+        public function actionLogout() {
+
+        $this->user->logout();
+
+        $this->redirect('Homepage:');
     }
 
 }

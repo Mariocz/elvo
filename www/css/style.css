@@ -262,3 +262,12 @@ body {
     color: #0000ff;
     margin-right: 10px;
 }
+
+/*input prompt forms*/
+
+.input-prompt {
+  position: absolute;
+  font-style: italic;
+  color: #888;
+  margin: 0.2em 0 0 0.5em;
+}

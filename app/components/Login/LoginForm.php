@@ -2,18 +2,19 @@
 
 class LoginForm extends Nette\Application\UI\Form {
 
-	public function __construct() {
+    public function __construct() {
 
-		parent::__construct();
+        parent::__construct();
 
-		$this->build();
-	}
+        $this->build();
+    }
 
-	private function build() {
+    private function build() {
 
-		$this->addPassword('password', 'Zadejte heslo:');
-		$this->addSubmit('ok', 'Vstoupit');
-
-	}
+        $this->addPassword('password')
+                ->setAttribute('class', 'with-prompt')
+                ->setAttribute('title', 'Zadejte přístupové heslo');
+        $this->addSubmit('ok', 'Vstoupit');
+    }
 
 }

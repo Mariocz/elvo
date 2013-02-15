@@ -23,6 +23,8 @@ common:
         database: @nette.database.default
         authenticator: 
             class: Security\Authenticator
+        dao:
+            class: Database\ElvoDao
 
 production < common:
     parameters:
