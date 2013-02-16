@@ -93,7 +93,8 @@
                 <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
                 <span class="logout" n:if="$user->isLoggedIn()"><a n:href="admin:" class="admin-button">Admin</a><a n:href="admin:logout">Odhlásit se</a></span>			
                 <div id="content">
-                    <div id="contact" n:if="!$presenter->getName()=='Admin'">
+                    <!--Contacts ribbon-->
+                    <div id="contact" n:if="$presenter->getName()!='Admin'">
                         <span class="text jmeno">Miloš Diviš</span>
                         <br><br>
                         <span class="text">
