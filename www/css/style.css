@@ -97,6 +97,10 @@ body {
     color: #dd0000;
 }
 
+#menu a.active {
+    color: #328ADC;
+}
+
 #contentbox {	
     background-color: white;
     min-height: 350px;
