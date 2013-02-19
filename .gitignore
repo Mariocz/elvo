@@ -2,4 +2,4 @@ temp/
 log/
 *~
 *.out
-config.nano
+config.neon
