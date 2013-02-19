@@ -37,7 +37,7 @@ $application->errorPresenter = 'Error';
 
 // Setup router
 $container->router[] = new Route('index.php', 'Homepage:default', Route::ONE_WAY);
-$container->router[] = new Route('<presenter>/<action>', 'Homepage:default');
+$container->router[] = new Route('<presenter>[.html]/<action>', 'Homepage:default');
 
 // Configure and run the application!
 $container->application->run();
